@@ -1,6 +1,6 @@
 import { Event } from '../../models/Event.js';
 
-export const addEvent = data => {
-  const res = Event.create(data);
+export const addEvent = async data => {
+  const res = await Event.create(data);
   return res;
 };

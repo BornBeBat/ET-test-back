@@ -6,3 +6,5 @@ export const eventsRouter = express.Router();
 eventsRouter.post('/', eventsControllers.addEvent);
 
 eventsRouter.get('/', eventsControllers.getEvents);
+
+eventsRouter.get('/:id', eventsControllers.getEventById);
