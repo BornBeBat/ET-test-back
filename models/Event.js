@@ -18,7 +18,7 @@ const eventShema = new Schema(
       type: String,
       required: [true, 'Set organizer for event'],
     },
-    participants: [{ type: Schema.Types.ObjectId, ref: 'participant' }],
+    participants: [{ type: Schema.Types.ObjectId, ref: 'db-participant' }],
   },
 
   { versionKey: false }
