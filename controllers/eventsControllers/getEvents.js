@@ -1,4 +1,5 @@
 import { eventsServices } from '../../services/index.js';
+import { HttpError } from '../../tools/HttpError.js';
 
 export const getEvents = async (req, res) => {
   const { page = 1, limit = 12, title, date, organizer } = req.query;
@@ -15,5 +16,8 @@ export const getEvents = async (req, res) => {
   }
 
   const result = await eventsServices.getEventList({}, query);
+  if (result.length === 0) {
+    throw HttpError(404);
+  }
   res.json({ result });
 };
